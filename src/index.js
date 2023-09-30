@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
-import Store from './redux/Store';
+import Store from './Redux/Store';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
