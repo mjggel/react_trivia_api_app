@@ -1,0 +1,37 @@
+[
+  {
+    "userPicture": "",
+    "username": "@john.constantine",
+    "name": "John Constantine",
+    "password": "123456",
+    "rememberMe": false
+  },
+  {
+    "userPicture": "",
+    "username": "@jane.doe",
+    "name": "Jane Doe",
+    "password": "password123",
+    "rememberMe": true
+  },
+  {
+    "userPicture": "",
+    "username": "@alice.smith",
+    "name": "Alice Smith",
+    "password": "securepass",
+    "rememberMe": true
+  },
+  {
+    "userPicture": "",
+    "username": "@michael.jones",
+    "name": "Michael Jones",
+    "password": "p@ssw0rd",
+    "rememberMe": false
+  },
+  {
+    "userPicture": "",
+    "username": "@sarah.wilson",
+    "name": "Sarah Wilson",
+    "password": "sarah123",
+    "rememberMe": true
+  }
+]
