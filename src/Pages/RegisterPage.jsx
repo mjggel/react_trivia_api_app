@@ -20,8 +20,8 @@ import {
   AiOutlineForm,
 } from 'react-icons/ai';
 import React, { useRef, useState } from 'react';
-import trivia_logo from '../imgs/trivia_logo.png';
-import user_template from '../imgs/user_template_img.png';
+import trivia_logo from '../Images/trivia_logo.png';
+import user_template from '../Images/user_template_img.png';
 import { useNavigate } from 'react-router-dom';
 
 export default function RegisterPage() {
@@ -91,7 +91,7 @@ export default function RegisterPage() {
 
       <Modal.Body className='text-center'>
         <Modal.Title>
-          Register
+          Register Page
           {formData.userpicture !== user_template && (
             <CloseButton
               style={{ position: 'absolute', right: '10px', top: '10px' }}

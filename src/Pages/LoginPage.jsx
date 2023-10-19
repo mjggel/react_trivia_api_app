@@ -20,7 +20,7 @@ import {
   AiOutlineCheckSquare,
 } from 'react-icons/ai';
 import React, { useState } from 'react';
-import trivia_logo from '../imgs/trivia_logo.png';
+import trivia_logo from '../Images/trivia_logo.png';
 import { useNavigate } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import { setUserName } from '../Redux/Reducers/UserReducer';
@@ -86,7 +86,7 @@ function LoginPage() {
       </Modal.Header>
 
       <Modal.Body className='text-center'>
-        <Modal.Title>Login</Modal.Title>
+        <Modal.Title>Login Page</Modal.Title>
         <Form>
           <InputGroup id='login-username' className='mb-3'>
             <InputGroup.Text>
@@ -138,7 +138,7 @@ function LoginPage() {
           </InputGroup>
 
           {formData.username && formData.password && (
-            <>
+            <label>
               <Button
                 name='rememberMe'
                 value={formData.rememberMe}
@@ -148,7 +148,7 @@ function LoginPage() {
                     rememberMe: !formData.rememberMe,
                   }))
                 }
-                variant='ouline-info'
+                variant='outline-info'
                 style={{
                   borderColor: 'transparent',
                 }}
@@ -160,7 +160,7 @@ function LoginPage() {
                 )}
               </Button>
               Remember Me
-            </>
+            </label>
           )}
         </Form>
         <span className='text-danger'>{errMessage}</span>
