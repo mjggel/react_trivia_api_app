@@ -63,18 +63,31 @@ export default function RegisterPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (
-      !formData.username ||
-      !formData.password ||
-      !formData.name ||
-      !formData.email
-    ) {
+    const { username, password, name, email } = formData;
+
+    if (!username || !password || !name || !email) {
       setInvalid(true);
       setErrorMessage('All fields are required');
       return;
     }
+    if (!users) {
+      localStorage.setItem('users', JSON.stringify(formData));
+      navigate('/login');
+      return;
+    }
+    if (users.some((user) => user.username === username)) {
+      setInvalid(true);
+      setErrorMessage('Username already exists');
+      return;
+    }
 
-    localStorage.setItem('users', JSON.stringify([formData, ...users]));
+    if (users.some((user) => user.email === email)) {
+      setInvalid(true);
+      setErrorMessage('Email already exists');
+      return;
+    }
+
+    localStorage.setItem('users', JSON.stringify([...users, { ...formData }]));
     navigate('/login');
   };
 
@@ -103,7 +116,6 @@ export default function RegisterPage() {
         </Modal.Title>
         <Form>
           <InputGroup
-            id='login-userpicture'
             className='mb-3'
             style={{
               display: 'flex',
@@ -111,6 +123,7 @@ export default function RegisterPage() {
             }}
           >
             <Form.Control
+              data-testid='register-userpicture'
               type='file'
               ref={fileInputRef}
               key={formData.userpicture}
@@ -131,7 +144,7 @@ export default function RegisterPage() {
             />
           </InputGroup>
 
-          <InputGroup id='login-name' className='mb-3'>
+          <InputGroup id='register-name' className='mb-3'>
             <InputGroup.Text>
               <AiOutlineForm />
             </InputGroup.Text>
@@ -145,7 +158,7 @@ export default function RegisterPage() {
             />
           </InputGroup>
 
-          <InputGroup id='login-username' className='mb-3'>
+          <InputGroup id='register-username' className='mb-3'>
             <InputGroup.Text>
               <AiOutlineUser />
             </InputGroup.Text>
@@ -159,7 +172,7 @@ export default function RegisterPage() {
             />
           </InputGroup>
 
-          <InputGroup id='login-email' className='mb-3'>
+          <InputGroup id='register-email' className='mb-3'>
             <InputGroup.Text>
               <AiOutlineMail />
             </InputGroup.Text>
@@ -173,7 +186,7 @@ export default function RegisterPage() {
             />
           </InputGroup>
 
-          <InputGroup id='login-password' className='mb-3'>
+          <InputGroup id='register-password' className='mb-3'>
             <InputGroup.Text>
               {showPassword ? <AiOutlineUnlock /> : <AiOutlineLock />}
             </InputGroup.Text>
@@ -212,7 +225,11 @@ export default function RegisterPage() {
       </Modal.Body>
 
       <Modal.Footer className='justify-content-between'>
-        <Button variant='outline_info' onClick={() => navigate('/login')}>
+        <Button
+          variant='outline_info'
+          data-testid='back-arrow-button'
+          onClick={() => navigate('/login')}
+        >
           <AiOutlineArrowLeft size={25} />
         </Button>
 
