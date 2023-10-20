@@ -162,6 +162,7 @@ describe('Login Page', () => {
       userPicture: '',
       username: '@john.constantine',
       name: 'John Constantine',
+      email: 'john.constantine@example.com',
       password: '123456',
       rememberMe: true,
     });

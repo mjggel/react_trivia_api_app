@@ -28,7 +28,7 @@ import { setUserName } from '../Redux/Reducers/UserReducer';
 function LoginPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const users = JSON.parse(localStorage.getItem('users')) || {};
+  const users = JSON.parse(localStorage.getItem('users')) || [];
   const [showPassword, setShowPassword] = useState(false);
   const [invalid, setInvalid] = useState(false);
   const [errMessage, setErrorMessage] = useState('');
@@ -54,7 +54,7 @@ function LoginPage() {
       return;
     }
 
-    const authenticatedUser = users?.find((user) => {
+    const authenticatedUser = users.find((user) => {
       return (
         user.username === formData.username &&
         user.password === formData.password
@@ -124,7 +124,7 @@ function LoginPage() {
             >
               <Button
                 onClick={() => setShowPassword(!showPassword)}
-                data-testId='eye-icon'
+                data-testid='eye-icon'
                 variant='ouline-info'
                 style={{
                   position: 'absolute',
