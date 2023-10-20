@@ -6,9 +6,9 @@ import RegisterPage from './Pages/RegisterPage';
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<Navigate to='/login' />} />
-      <Route path='/login' element={<LoginPage />} />
-      <Route path='/register' element={<RegisterPage />} />
+      <Route exact path='/' element={<Navigate to='/login' />} />
+      <Route exact path='/login' element={<LoginPage />} />
+      <Route exact path='/register' element={<RegisterPage />} />
     </Routes>
   );
 }

@@ -124,6 +124,7 @@ function LoginPage() {
             >
               <Button
                 onClick={() => setShowPassword(!showPassword)}
+                data-testId='eye-icon'
                 variant='ouline-info'
                 style={{
                   position: 'absolute',
