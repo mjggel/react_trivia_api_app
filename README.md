@@ -28,17 +28,15 @@ Follow these steps to get the project up and running on your local machine:
 Install dependencies:
 
 
-npm install
+## npm install
 Start the development server:
 
 
-npm start
+## npm start
 Open your web browser and navigate to http://localhost:3000 to access the trivia game.
 
-Contributing
-Feel free to contribute to this project by submitting issues, feature requests, or pull requests. Your contributions are welcome!
 
-Acknowledgments
+## Acknowledgments
 This project uses the Open Trivia Database (opentdb.com) API to fetch trivia questions.
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
