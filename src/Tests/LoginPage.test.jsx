@@ -144,7 +144,7 @@ describe('Login Page', () => {
     await user.click(loginButtonElement);
 
     await waitFor(() => {
-      expect(navigateMock).toHaveBeenCalledWith('/game');
+      expect(navigateMock).toHaveBeenCalledWith('/home');
     });
   });
 

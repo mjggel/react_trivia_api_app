@@ -24,7 +24,7 @@ import trivia_logo from '../Images/trivia_logo.png';
 import { useNavigate } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import { setUserName } from '../Redux/Reducers/UserReducer';
-import { getTriviaToken } from '../services/HandleFetchAPI';
+import { getTriviaToken } from '../services/getTriviaToken';
 function LoginPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -73,8 +73,8 @@ function LoginPage() {
     users[authenticatedUserIndex].rememberMe = formData.rememberMe;
     users[authenticatedUserIndex].token = token;
     localStorage.setItem('users', JSON.stringify(users));
-    dispatch(setUserName(users[authenticatedUserIndex].name));
-    navigate('/game');
+    dispatch(setUserName(users[authenticatedUserIndex].username));
+    navigate('/home');
   };
 
   return (
