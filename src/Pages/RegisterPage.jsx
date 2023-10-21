@@ -70,11 +70,6 @@ export default function RegisterPage() {
       setErrorMessage('All fields are required');
       return;
     }
-    if (!users) {
-      localStorage.setItem('users', JSON.stringify(formData));
-      navigate('/login');
-      return;
-    }
     if (users.some((user) => user.username === username)) {
       setInvalid(true);
       setErrorMessage('Username already exists');
@@ -209,6 +204,7 @@ export default function RegisterPage() {
               <Button
                 onClick={() => setShowPassword(!showPassword)}
                 variant='ouline-info'
+                data-testid='register-eye-icon'
                 style={{
                   position: 'absolute',
                   right: '10px',
@@ -226,7 +222,7 @@ export default function RegisterPage() {
 
       <Modal.Footer className='justify-content-between'>
         <Button
-          variant='outline_info'
+          variant='outline-info'
           data-testid='back-arrow-button'
           onClick={() => navigate('/login')}
         >
