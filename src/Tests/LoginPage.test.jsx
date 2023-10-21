@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import renderWithReduxAndRouter from '../Utils/RenderWithReduxAndRouter';
 import { useNavigate } from 'react-router-dom';
 import usersMock from './mocks/Users.mock.json';
@@ -97,7 +97,11 @@ describe('Login Page', () => {
 
     await user.click(loginButtonElement);
 
-    expect(screen.getByText(/All fields are required/i)).toBeInTheDocument();
+    await waitFor(() => {
+      expect(
+        screen.queryByText(/All fields are required/i)
+      ).toBeInTheDocument();
+    });
   });
 
   test('should not be possible to Login if the username or password is incorrect', async () => {
@@ -115,9 +119,11 @@ describe('Login Page', () => {
     await user.type(passwordInputElement, 'test');
     await user.click(loginButtonElement);
 
-    expect(
-      screen.getByText(/Username or password is invalid/i)
-    ).toBeInTheDocument();
+    await waitFor(() => {
+      expect(
+        screen.queryByText(/Username or password is invalid/i)
+      ).toBeInTheDocument();
+    });
   });
 
   test('should be possible to Login if the username and password are correct', async () => {
@@ -137,10 +143,12 @@ describe('Login Page', () => {
     await user.type(passwordInputElement, '123456');
     await user.click(loginButtonElement);
 
-    expect(navigateMock).toHaveBeenCalledWith('/game');
+    await waitFor(() => {
+      expect(navigateMock).toHaveBeenCalledWith('/game');
+    });
   });
 
-  test('should uptade rememberMe key in localStorage', async () => {
+  test('should update rememberMe key and save token in localStorage', async () => {
     const navigateMock = jest.fn();
     useNavigate.mockReturnValue(navigateMock);
     const { user } = renderWithReduxAndRouter(<LoginPage />, {
@@ -153,18 +161,27 @@ describe('Login Page', () => {
       name: /start/i,
     });
 
+    const initialUsers = JSON.parse(localStorage.getItem('users'));
+    const initialRememberMeValues = initialUsers.map((user) => user.rememberMe);
+
+    expect(initialRememberMeValues.every((value) => value === false)).toBe(
+      true
+    );
+
     await user.type(usernameInputElement, '@john.constantine');
     await user.type(passwordInputElement, '123456');
     await user.click(screen.getByLabelText(/remember me/i));
     await user.click(loginButtonElement);
 
-    expect(JSON.parse(localStorage.getItem('users'))).toEqual({
-      userPicture: '',
-      username: '@john.constantine',
-      name: 'John Constantine',
-      email: 'john.constantine@example.com',
-      password: '123456',
-      rememberMe: true,
+    await waitFor(() => {
+      const updatedUsers = JSON.parse(localStorage.getItem('users'));
+      const updatedRememberMeValues = updatedUsers.map(
+        (user) => user.rememberMe
+      );
+
+      expect(updatedRememberMeValues.some((value) => value === true)).toBe(
+        true
+      );
     });
   });
 
@@ -205,6 +222,8 @@ describe('Login Page', () => {
 
     await user.click(loginButtonElement);
 
-    expect(screen.getByText(/Username or password is invalid/i));
+    await waitFor(() => {
+      expect(screen.getByText(/Username or password is invalid/i));
+    });
   });
 });

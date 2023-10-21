@@ -24,7 +24,7 @@ import trivia_logo from '../Images/trivia_logo.png';
 import { useNavigate } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import { setUserName } from '../Redux/Reducers/UserReducer';
-
+import { getTriviaToken } from '../services/HandleFetchAPI';
 function LoginPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -46,31 +46,34 @@ function LoginPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const token = await getTriviaToken();
+
     if (!formData.username || !formData.password) {
       setInvalid(true);
       setErrorMessage('All fields are required');
       return;
     }
 
-    const authenticatedUser = users.find((user) => {
+    const authenticatedUserIndex = users.findIndex((user) => {
       return (
         user.username === formData.username &&
         user.password === formData.password
       );
     });
 
-    if (!authenticatedUser) {
+    if (authenticatedUserIndex === -1) {
       setInvalid(true);
       setErrorMessage('Username or password is invalid');
       return;
     }
-    if (formData.rememberMe) {
-      authenticatedUser.rememberMe = formData.rememberMe;
-      localStorage.setItem('users', JSON.stringify(authenticatedUser));
-    }
-    dispatch(setUserName(authenticatedUser.name));
+
+    users[authenticatedUserIndex].rememberMe = formData.rememberMe;
+    users[authenticatedUserIndex].token = token;
+    localStorage.setItem('users', JSON.stringify(users));
+    dispatch(setUserName(users[authenticatedUserIndex].name));
     navigate('/game');
   };
 
