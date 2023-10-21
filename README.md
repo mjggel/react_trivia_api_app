@@ -24,7 +24,7 @@ Follow these steps to get the project up and running on your local machine:
 
    ```sh
    git clone https://github.com/mjggel/react_trivia_api_app.git
-   cd trivia-game
+   cd react_trivia_api_app
 Install dependencies:
 
 
