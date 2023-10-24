@@ -1,0 +1,119 @@
+{
+  "response_code": 0,
+  "results": [
+      {
+          "category": "General Knowledge",
+          "type": "boolean",
+          "difficulty": "medium",
+          "question": "Coca-Cola&#039;s original colour was green.",
+          "correct_answer": "False",
+          "incorrect_answers": [
+              "True"
+          ]
+      },
+      {
+          "category": "General Knowledge",
+          "type": "boolean",
+          "difficulty": "medium",
+          "question": "The sum of all the numbers on a roulette wheel is 666.",
+          "correct_answer": "True",
+          "incorrect_answers": [
+              "False"
+          ]
+      },
+      {
+          "category": "General Knowledge",
+          "type": "boolean",
+          "difficulty": "medium",
+          "question": "Furby was released in 1998.",
+          "correct_answer": "True",
+          "incorrect_answers": [
+              "False"
+          ]
+      },
+      {
+          "category": "General Knowledge",
+          "type": "multiple",
+          "difficulty": "medium",
+          "question": "What is the name of the very first video uploaded to YouTube?",
+          "correct_answer": "Me at the zoo",
+          "incorrect_answers": [
+              "tribute",
+              "carrie rides a truck",
+              "Her new puppy from great grandpa vern."
+          ]
+      },
+      {
+          "category": "General Knowledge",
+          "type": "multiple",
+          "difficulty": "medium",
+          "question": "What is the unit of currency in Laos?",
+          "correct_answer": "Kip",
+          "incorrect_answers": [
+              "Ruble",
+              "Konra",
+              "Dollar"
+          ]
+      },
+      {
+          "category": "General Knowledge",
+          "type": "multiple",
+          "difficulty": "medium",
+          "question": "Which of these is the name of a Japanese system of alternative medicine, literally meaning &quot;finger pressure&quot;?",
+          "correct_answer": "Shiatsu",
+          "incorrect_answers": [
+              "Ukiyo",
+              "Majime",
+              "Ikigai"
+          ]
+      },
+      {
+          "category": "General Knowledge",
+          "type": "multiple",
+          "difficulty": "medium",
+          "question": "What country saw a world record 315 million voters turn out for elections on May 20, 1991?",
+          "correct_answer": "India",
+          "incorrect_answers": [
+              "United States of America",
+              "Soviet Union",
+              "Poland"
+          ]
+      },
+      {
+          "category": "General Knowledge",
+          "type": "multiple",
+          "difficulty": "medium",
+          "question": "The term &quot;scientist&quot; was coined in which year?",
+          "correct_answer": "1833",
+          "incorrect_answers": [
+              "1933",
+              "1942",
+              "1796"
+          ]
+      },
+      {
+          "category": "General Knowledge",
+          "type": "multiple",
+          "difficulty": "medium",
+          "question": "When was Nintendo founded?",
+          "correct_answer": "September 23rd, 1889",
+          "incorrect_answers": [
+              "October 19th, 1891",
+              "March 4th, 1887",
+              "December 27th, 1894"
+          ]
+      },
+      {
+          "category": "General Knowledge",
+          "type": "multiple",
+          "difficulty": "medium",
+          "question": "A statue of Charles Darwin sits in what London museum?",
+          "correct_answer": "Natural History Museum",
+          "incorrect_answers": [
+              "Tate",
+              "British Museum",
+              "Science Museum"
+          ]
+      }
+  ]
+}
