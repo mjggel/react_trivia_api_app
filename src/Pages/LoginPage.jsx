@@ -24,7 +24,7 @@ import trivia_logo from '../Images/trivia_logo.png';
 import { useNavigate } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import { setUserName } from '../Redux/Reducers/UserReducer';
-import { getTriviaToken } from '../services/getTriviaToken';
+import { getTriviaToken } from '../Services/getTriviaToken';
 function LoginPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -171,8 +171,8 @@ function LoginPage() {
       </Modal.Body>
 
       <Modal.Footer className='justify-content-around'>
-        <Button variant='info' onClick={() => navigate('/settings')}>
-          <AiFillSetting /> Settings
+        <Button variant='info' onClick={() => navigate('/leaderboard')}>
+          <AiFillSetting /> Leaderboard
         </Button>
 
         <Button variant='primary' onClick={handleSubmit}>
