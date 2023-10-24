@@ -5,7 +5,8 @@
     "name": "John Constantine",
     "email": "john.constantine@example.com",
     "password": "123456",
-    "rememberMe": false
+    "rememberMe": false,
+    "token": "TOKEN_VALUE"
   },
   {
     "userPicture": "",
@@ -13,7 +14,8 @@
     "name": "Jane Doe",
     "email": "jane.doe@example.com",
     "password": "password123",
-    "rememberMe": false
+    "rememberMe": false,
+    "token": "TOKEN_VALUE"
   },
   {
     "userPicture": "",
@@ -21,7 +23,8 @@
     "name": "Alice Smith",
     "email": "alice.smith@example.com",
     "password": "securepass",
-    "rememberMe": false
+    "rememberMe": false,
+    "token": "TOKEN_VALUE"
   },
   {
     "userPicture": "",
@@ -29,7 +32,8 @@
     "name": "Michael Jones",
     "email": "michael.jones@example.com",
     "password": "p@ssw0rd",
-    "rememberMe": false
+    "rememberMe": false,
+    "token": "TOKEN_VALUE"
   },
   {
     "userPicture": "",
@@ -37,6 +41,7 @@
     "name": "Sarah Wilson",
     "email": "sarah.wilson@example.com",
     "password": "sarah123",
-    "rememberMe": false
+    "rememberMe": false,
+    "token": "TOKEN_VALUE"
   }
 ]

@@ -43,10 +43,10 @@ describe('Login Page', () => {
     });
     expect(registerButtonElement).toBeInTheDocument();
 
-    const settingsButtonElement = screen.getByRole('button', {
-      name: /settings/i,
+    const leaderboardButtonElement = screen.getByRole('button', {
+      name: /leaderboard/i,
     });
-    expect(settingsButtonElement).toBeInTheDocument();
+    expect(leaderboardButtonElement).toBeInTheDocument();
 
     await user.type(usernameInputElement, 'test');
     await user.type(passwordInputElement, 'test');
@@ -69,7 +69,7 @@ describe('Login Page', () => {
     expect(navigateMock).toHaveBeenCalledWith('/register');
   });
 
-  test('test change route when settings button is clicked', async () => {
+  test('test change route when leaderboard button is clicked', async () => {
     const navigateMock = jest.fn();
     useNavigate.mockReturnValue(navigateMock);
     const { user } = renderWithReduxAndRouter(<LoginPage />, {
@@ -77,13 +77,13 @@ describe('Login Page', () => {
     });
 
     const loginPageTextElement = screen.getByText(/Login Page/i);
-    const settingsButtonElement = screen.getByRole('button', {
-      name: /settings/i,
+    const leaderboardButtonElement = screen.getByRole('button', {
+      name: /leaderboard/i,
     });
 
-    await user.click(settingsButtonElement);
+    await user.click(leaderboardButtonElement);
 
-    expect(navigateMock).toHaveBeenCalledWith('/settings');
+    expect(navigateMock).toHaveBeenCalledWith('/leaderboard');
   });
 
   test('should not be possible to Login if the username or password is empty', async () => {
