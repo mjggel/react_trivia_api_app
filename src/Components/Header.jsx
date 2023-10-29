@@ -7,7 +7,7 @@ import { connect, useSelector } from 'react-redux';
 import { NavDropdown } from 'react-bootstrap';
 
 function Header() {
-  const { userName } = useSelector((state) => state.userReducer);
+  const { userName } = useSelector((state) => state.PlayerReducer);
   const users = JSON.parse(localStorage.getItem('users')) || [];
   const currentUser = users.find((user) => user.username === userName);
 
