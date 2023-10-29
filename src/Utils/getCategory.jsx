@@ -1,4 +1,4 @@
-export default function getCategoryValue(key) {
+export default function getCategory(key) {
   const categoryMap = {
     'Any Category': 0,
     'General Knowledge': 9,

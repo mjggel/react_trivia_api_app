@@ -14,12 +14,12 @@ export const userSlice = createSlice({
     increment: (state) => {
       state.userAssertions += 1;
     },
-    decrement: (state) => {
-      state.userAssertions -= 1;
+    setScore: (state, action) => {
+      state.userScore = action.payload;
     },
   },
 });
 
-export const { setUserName, increment, decrement } = userSlice.actions;
+export const { setUserName, increment, setScore } = userSlice.actions;
 
 export default userSlice.reducer;

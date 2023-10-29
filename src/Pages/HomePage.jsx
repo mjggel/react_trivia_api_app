@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import { FaGamepad } from 'react-icons/fa';
 import { connect, useSelector, useDispatch } from 'react-redux';
@@ -9,21 +9,14 @@ import { getTriviaQuestions } from '../Services/getTriviaQuestions';
 import getCategoryValue from '../Utils/getCategory';
 
 function HomePage() {
-  const { userName } = useSelector((state) => state.userReducer);
+  const { userName } = useSelector((state) => state.PlayerReducer);
   const users = JSON.parse(localStorage.getItem('users')) || [];
-  const token = users.find((user) => user.username === userName)?.token || null;
+  const token = users.find((user) => user.username === userName).token || null;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [difficulty, setDifficulty] = useState('medium');
   const [category, setCategory] = useState('medium');
   const difficultyOptions = ['easy', 'medium', 'hard'];
-
-  useEffect(() => {
-    if (!token) {
-      navigate('/login');
-      return;
-    }
-  }, []);
 
   const handleDifficultyChange = (e) => {
     setDifficulty(e.target.value);
@@ -46,7 +39,10 @@ function HomePage() {
   };
 
   return (
-    <Container className='text-center'>
+    <Container
+      className='text-center shadow-lg rounded p-3 mb-5 py-5'
+      style={{ marginTop: '30px' }}
+    >
       <h2>Welcome to the Trivia Game APP</h2>
       <Container
         style={{
@@ -89,6 +85,12 @@ function HomePage() {
         </Form.Group>
       </Container>
       <hr />
+      <Container>
+        <span className='text-danger'>
+          {difficulty} will give you {difficultyOptions.indexOf(difficulty) + 1}{' '}
+          points for each correct answer
+        </span>
+      </Container>
       <Button variant='primary' onClick={startGame}>
         Start Game <FaGamepad />
       </Button>

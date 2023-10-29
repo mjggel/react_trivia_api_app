@@ -13,12 +13,12 @@ import {
   AiFillEye,
   AiFillEyeInvisible,
   AiOutlineUnlock,
-  AiFillSetting,
   AiOutlineUserAdd,
   AiFillPlayCircle,
   AiOutlineBorder,
   AiOutlineCheckSquare,
 } from 'react-icons/ai';
+import { MdLeaderboard } from 'react-icons/md';
 import React, { useState } from 'react';
 import trivia_logo from '../Images/trivia_logo.png';
 import { useNavigate } from 'react-router-dom';
@@ -172,7 +172,7 @@ function LoginPage() {
 
       <Modal.Footer className='justify-content-around'>
         <Button variant='info' onClick={() => navigate('/leaderboard')}>
-          <AiFillSetting /> Leaderboard
+          <MdLeaderboard /> Leaderboard
         </Button>
 
         <Button variant='primary' onClick={handleSubmit}>
