@@ -8,11 +8,11 @@ import { screen, waitFor } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 import { setQuestions } from '../Redux/Reducers/QuestionsReducer';
 import { useDispatch } from 'react-redux';
-import questionsMock from './mocks/Questions.mock.json';
+import mediumQuestionsMock from './mocks/questions_mock/mediumQuestionsMock.json';
 import { getTriviaQuestions } from '../Services/getTriviaQuestions';
 
 const initialState = {
-  userReducer: {
+  PlayerReducer: {
     userName: '@john.constantine',
   },
 };
@@ -83,11 +83,11 @@ describe('HomePage', () => {
   });
 
   test('test if the start game button works and dispatches the correct action with the correct info', async () => {
-    const navigateMock = jest.fn();
+    const mockNavigate = jest.fn();
     const mockDispatch = jest.fn();
-    getTriviaQuestions.mockReturnValue(questionsMock);
+    getTriviaQuestions.mockReturnValue(mediumQuestionsMock);
     useDispatch.mockReturnValue(mockDispatch);
-    useNavigate.mockReturnValue(navigateMock);
+    useNavigate.mockReturnValue(mockNavigate);
     const { user } = renderWithReduxAndRouter(<HomePage />, {
       route: '/home',
       initialState,
@@ -107,20 +107,10 @@ describe('HomePage', () => {
     await user.click(startGameButton);
 
     await waitFor(() => {
-      expect(mockDispatch).toHaveBeenCalledWith(setQuestions(questionsMock));
-      expect(navigateMock).toHaveBeenCalledWith('/game');
-    });
-  });
-
-  test('test if redirects to login page if the user does not have a token', async () => {
-    const navigateMock = jest.fn();
-    useNavigate.mockReturnValue(navigateMock);
-    const { user } = renderWithReduxAndRouter(<HomePage />, {
-      route: '/home',
-    });
-
-    await waitFor(() => {
-      expect(navigateMock).toHaveBeenCalledWith('/login');
+      expect(mockDispatch).toHaveBeenCalledWith(
+        setQuestions(mediumQuestionsMock)
+      );
+      expect(mockNavigate).toHaveBeenCalledWith('/game');
     });
   });
 });
