@@ -30,7 +30,7 @@ export default function RegisterPage() {
   const users = JSON.parse(localStorage.getItem('users')) || [];
   const [showPassword, setShowPassword] = useState(false);
   const [invalid, setInvalid] = useState(false);
-  const [errMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     userpicture: user_template,
     name: '',
@@ -39,18 +39,19 @@ export default function RegisterPage() {
     password: '',
     rememberMe: false,
   });
-
   const handleUserPictureChange = ({ target }) => {
     const file = target.files[0];
+    const reader = new FileReader();
 
     if (file) {
-      const imageUrl = URL.createObjectURL(file);
-
+      reader.readAsDataURL(file);
+    }
+    reader.onloadend = () => {
       setFormData((prevState) => ({
         ...prevState,
-        userpicture: imageUrl,
+        userpicture: reader.result,
       }));
-    }
+    };
   };
 
   const handleChange = (e) => {
@@ -217,13 +218,16 @@ export default function RegisterPage() {
             </OverlayTrigger>
           </InputGroup>
         </Form>
-        <span className='text-danger'>{errMessage}</span>
+        <span className='text-danger'>{errorMessage}</span>
       </Modal.Body>
 
       <Modal.Footer className='justify-content-between'>
         <Button
-          variant='outline-info'
+          variant='ouline-info'
           data-testid='back-arrow-button'
+          style={{
+            backgroundColor: 'transparent',
+          }}
           onClick={() => navigate('/login')}
         >
           <AiOutlineArrowLeft size={25} />
