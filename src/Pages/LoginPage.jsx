@@ -15,8 +15,6 @@ import {
   AiOutlineUnlock,
   AiOutlineUserAdd,
   AiFillPlayCircle,
-  AiOutlineBorder,
-  AiOutlineCheckSquare,
 } from 'react-icons/ai';
 import { MdLeaderboard } from 'react-icons/md';
 import React, { useState } from 'react';
@@ -88,8 +86,8 @@ function LoginPage() {
         />
       </Modal.Header>
 
-      <Modal.Body className='text-center'>
-        <Modal.Title>Login Page</Modal.Title>
+      <Modal.Body>
+        <Modal.Title className='text-center'>Login Page</Modal.Title>
         <Form>
           <InputGroup id='login-username' className='mb-3'>
             <InputGroup.Text>
@@ -142,29 +140,17 @@ function LoginPage() {
           </InputGroup>
 
           {formData.username && formData.password && (
-            <label>
-              <Button
-                name='rememberMe'
+            <Form.Group className='mb-3'>
+              <Form.Check
+                type='checkbox'
+                label='Remember me'
                 value={formData.rememberMe}
+                name='rememberMe'
                 onClick={() =>
-                  setFormData((prevState) => ({
-                    ...prevState,
-                    rememberMe: !formData.rememberMe,
-                  }))
+                  setFormData({ ...formData, rememberMe: !formData.rememberMe })
                 }
-                variant='outline-info'
-                style={{
-                  borderColor: 'transparent',
-                }}
-              >
-                {formData.rememberMe ? (
-                  <AiOutlineCheckSquare size={20} />
-                ) : (
-                  <AiOutlineBorder size={20} />
-                )}
-              </Button>
-              Remember Me
-            </label>
+              />
+            </Form.Group>
           )}
         </Form>
         <span className='text-danger'>{errMessage}</span>
