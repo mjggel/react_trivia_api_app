@@ -144,6 +144,7 @@ function LoginPage() {
               <Form.Check
                 type='checkbox'
                 label='Remember me'
+                id='rememberMeCheckbox'
                 value={formData.rememberMe}
                 name='rememberMe'
                 onClick={() =>
