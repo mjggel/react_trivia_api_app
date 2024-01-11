@@ -42,10 +42,13 @@ export default function RegisterPage() {
   const handleUserPictureChange = ({ target }) => {
     const file = target.files[0];
     const reader = new FileReader();
-
+    console.log('formData.userpicture:', formData.userpicture);
+    console.log('file:', file);
     if (file) {
       reader.readAsDataURL(file);
     }
+    console.log('reader:', reader);
+    console.log('reader.result:', reader.result);
     reader.onloadend = () => {
       setFormData((prevState) => ({
         ...prevState,
@@ -84,7 +87,7 @@ export default function RegisterPage() {
     }
 
     localStorage.setItem('users', JSON.stringify([...users, { ...formData }]));
-    navigate('/login');
+    navigate('/login', { state: { from: location.pathname } });
   };
 
   return (
@@ -228,7 +231,9 @@ export default function RegisterPage() {
           style={{
             backgroundColor: 'transparent',
           }}
-          onClick={() => navigate('/login')}
+          onClick={() =>
+            navigate('/login', { state: { from: location.pathname } })
+          }
         >
           <AiOutlineArrowLeft size={25} />
         </Button>

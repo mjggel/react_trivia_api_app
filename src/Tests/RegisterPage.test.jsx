@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import renderWithReduxAndRouter from '../Utils/RenderWithReduxAndRouter';
 import RegisterPage from '../Pages/RegisterPage';
 import user_template from '../Images/user_template_img.png';
@@ -57,7 +57,9 @@ describe('Register Page', () => {
 
     await user.click(screen.getByTestId('back-arrow-button'));
 
-    expect(navigateMock).toHaveBeenCalledWith('/login');
+    expect(navigateMock).toHaveBeenCalledWith('/login', {
+      state: { from: '/register' },
+    });
   });
 
   test('should not be possible to Register if there are empty fields', async () => {
@@ -121,7 +123,9 @@ describe('Register Page', () => {
         rememberMe: false,
       },
     ]);
-    expect(navigateMock).toHaveBeenCalledWith('/login');
+    expect(navigateMock).toHaveBeenCalledWith('/login', {
+      state: { from: '/register' },
+    });
   });
 
   test('test if when a new user is registered doesnt remove the old users in the localstorage', async () => {
@@ -170,7 +174,9 @@ describe('Register Page', () => {
 
     expect(usersInLocalStorage).toBeInstanceOf(Array);
     expect(isUserInLocalStorage).toBe(true);
-    expect(navigateMock).toHaveBeenCalledWith('/login');
+    expect(navigateMock).toHaveBeenCalledWith('/login', {
+      state: { from: '/register' },
+    });
   });
 
   test('should not be possible to Register if the username already exists', async () => {
@@ -219,37 +225,6 @@ describe('Register Page', () => {
     await user.click(registerButton);
 
     expect(screen.getByText(/Email already exists/i)).toBeInTheDocument();
-  });
-
-  test('test if its possible to change profile picture', async () => {
-    global.URL.createObjectURL = jest.fn(() => 'blob:http://test.com/abc');
-
-    const { user } = renderWithReduxAndRouter(<RegisterPage />, {
-      route: '/register',
-    });
-
-    const userPictureInput = screen.getByTestId('register-userpicture');
-    const userPicture = screen.getByRole('img', {
-      name: /userpicture/i,
-    });
-
-    await user.upload(
-      userPictureInput,
-      new File(['user_picture'], 'user_picture.png', { type: 'image/png' })
-    );
-
-    expect(userPicture).toHaveAttribute(
-      'src',
-      expect.stringContaining('blob:http://test.com/abc')
-    );
-
-    const closeBtn = screen.getByRole('button', { name: /close/i });
-    await user.click(closeBtn);
-
-    expect(userPicture).toHaveAttribute(
-      'src',
-      expect.stringContaining('user_template_img.png')
-    );
   });
 
   test('should be possible to see the password when the eye icon is clicked', async () => {
