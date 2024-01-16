@@ -42,13 +42,9 @@ export default function RegisterPage() {
   const handleUserPictureChange = ({ target }) => {
     const file = target.files[0];
     const reader = new FileReader();
-    console.log('formData.userpicture:', formData.userpicture);
-    console.log('file:', file);
     if (file) {
       reader.readAsDataURL(file);
     }
-    console.log('reader:', reader);
-    console.log('reader.result:', reader.result);
     reader.onloadend = () => {
       setFormData((prevState) => ({
         ...prevState,

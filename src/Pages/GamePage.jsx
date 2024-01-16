@@ -117,7 +117,7 @@ function GamePage() {
                   ? answer === questions.results[currQuestions].correct_answer
                     ? { backgroundColor: 'green', color: 'white' }
                     : { backgroundColor: 'red', color: 'white' }
-                  : { backgroundImage: 'white', color: 'black' }
+                  : { backgroundColor: 'white', color: 'black' }
               }
             >
               {he.decode(answer)}

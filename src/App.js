@@ -47,8 +47,6 @@ function App() {
     location.pathname
   );
 
-  console.log(location);
-
   return (
     <main className='App'>
       {shouldRenderHeader && <Header />}

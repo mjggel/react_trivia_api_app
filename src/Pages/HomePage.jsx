@@ -10,8 +10,8 @@ import getCategoryValue from '../Utils/getCategory';
 
 function HomePage() {
   const { userName } = useSelector((state) => state.PlayerReducer);
-  const users = JSON.parse(localStorage.getItem('users')) || [];
-  const token = users.find((user) => user.username === userName).token || null;
+  const users = JSON.parse(localStorage.getItem('users'));
+  const token = users.find((user) => user.username === userName).token;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [difficulty, setDifficulty] = useState('medium');
