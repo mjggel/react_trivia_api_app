@@ -1,0 +1,82 @@
+[
+  {
+    "userPicture": "",
+    "username": "@john.constantine",
+    "name": "John Constantine",
+    "email": "john.constantine@example.com",
+    "password": "123456",
+    "rememberMe": false,
+    "token": "TOKEN_VALUE",
+    "ranking": {
+      "assertions": 3,
+      "category": "Entertainment: Video Games",
+      "date": "01-16-2024",
+      "difficulty": "medium",
+      "score": 6
+    }
+  },
+  {
+    "userPicture": "",
+    "username": "@jane.doe",
+    "name": "Jane Doe",
+    "email": "jane.doe@example.com",
+    "password": "password123",
+    "rememberMe": false,
+    "token": "TOKEN_VALUE",
+    "ranking": {
+      "assertions": 2,
+      "category": "Science: Computers",
+      "date": "01-16-2024",
+      "difficulty": "easy",
+      "score": 2
+    }
+  },
+  {
+    "userPicture": "",
+    "username": "@alice.smith",
+    "name": "Alice Smith",
+    "email": "alice.smith@example.com",
+    "password": "securepass",
+    "rememberMe": false,
+    "token": "TOKEN_VALUE",
+    "ranking": {
+      "assertions": 5,
+      "category": "General Knowledge",
+      "date": "01-16-2024",
+      "difficulty": "hard",
+      "score": 15
+    }
+  },
+  {
+    "userPicture": "",
+    "username": "@michael.jones",
+    "name": "Michael Jones",
+    "email": "michael.jones@example.com",
+    "password": "p@ssw0rd",
+    "rememberMe": false,
+    "token": "TOKEN_VALUE",
+    "ranking": {
+      "assertions": 4,
+      "category": "Science: Gadgets",
+      "date": "01-16-2024",
+      "difficulty": "medium",
+      "score": 8
+    }
+  },
+  {
+    "userPicture": "",
+    "username": "@sarah.wilson",
+    "name": "Sarah Wilson",
+    "email": "sarah.wilson@example.com",
+    "password": "sarah123",
+    "rememberMe": false,
+    "token": "TOKEN_VALUE",
+    "ranking": {
+      "assertions": 3,
+      "category": "Entertainment: Music",
+      "date": "01-16-2024",
+      "difficulty": "easy",
+      "score": 3
+    }
+  }
+]

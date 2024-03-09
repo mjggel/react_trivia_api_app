@@ -1,0 +1,88 @@
+{
+  "results": [
+    {
+      "category": "Vehicles",
+      "type": "boolean",
+      "difficulty": "hard",
+      "question": "In 1993 Swedish car manufacturer Saab experimented with replacing the steering wheel with a joystick in a Saab 9000.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "How many people can you recruit in the game Suikoden in a single playthrough?",
+      "correct_answer": "107",
+      "incorrect_answers": ["108", "93", "96"]
+    },
+    {
+      "category": "Entertainment: Musicals & Theatres",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What is the name of Broadway&#039;s first &quot;long-run&quot; musical?",
+      "correct_answer": "The Elves",
+      "incorrect_answers": ["Wicked", "Hamilton", "The Book of Mormon"]
+    },
+    {
+      "category": "Entertainment: Japanese Anime & Manga",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which of these anime have over 7,500 episodes?",
+      "correct_answer": "Sazae-san",
+      "incorrect_answers": ["Naruto", "One Piece", "Chibi Maruko-chan"]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which of these games was NOT developed by Markus Persson?",
+      "correct_answer": "Dwarf Fortress",
+      "incorrect_answers": ["Minecraft", "Wurm Online", "0x10c"]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What year was the RoboSapien toy robot released?",
+      "correct_answer": "2004",
+      "incorrect_answers": ["2000", "2001", "2006"]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "The main objective of the German operation &quot;Case Blue&quot; during World War II was originally to capture what?",
+      "correct_answer": "Caucasus",
+      "incorrect_answers": ["Stalingrad", "Crimea", "Voronezh"]
+    },
+    {
+      "category": "Celebrities",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Who was Donald Trump&#039;s first wife?",
+      "correct_answer": "Ivana Zeln&iacute;čkov&aacute;",
+      "incorrect_answers": ["Melania Knauss", "Marla Maples", "Nancy Davis"]
+    },
+    {
+      "category": "Entertainment: Television",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What was the date of original airing of the pilot episode of My Little Pony: Friendship is Magic?",
+      "correct_answer": "October 10th, 2010",
+      "incorrect_answers": [
+        "November 6th, 2010",
+        "April 14th, 1984",
+        "May 18th, 2015"
+      ]
+    },
+    {
+      "category": "Science: Computers",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Who is the founder of Palantir?",
+      "correct_answer": "Peter Thiel",
+      "incorrect_answers": ["Mark Zuckerberg", "Marc Benioff", "Jack Dorsey"]
+    }
+  ]
+}

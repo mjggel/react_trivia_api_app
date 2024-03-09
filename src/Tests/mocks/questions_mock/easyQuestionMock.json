@@ -1,0 +1,96 @@
+{
+  "results": [
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who is the main character of the game Half-Life: Opposing Force?",
+      "correct_answer": "Adrian Shephard",
+      "incorrect_answers": ["Gordon Freeman", "Alyx Vance", "Barney Calhoun"]
+    },
+    {
+      "category": "Entertainment: Comics",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who is the creator of the comic series &quot;The Walking Dead&quot;?",
+      "correct_answer": "Robert Kirkman",
+      "incorrect_answers": [
+        "Stan Lee",
+        "Malcolm Wheeler-Nicholson",
+        "Robert Crumb"
+      ]
+    },
+    {
+      "category": "Animals",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "A bear does NOT defecate during hibernation. ",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the Spanish word for &quot;donkey&quot;?",
+      "correct_answer": "Burro",
+      "incorrect_answers": ["Caballo", "Toro", "Perro"]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who created the 2011 Video Game &quot;Minecraft&quot;?",
+      "correct_answer": "Markus Persson",
+      "incorrect_answers": [
+        "Jens Bergensten",
+        "Daniel Rosenfeld",
+        "Carl Manneh"
+      ]
+    },
+    {
+      "category": "Science: Computers",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "On Twitter, what was the original character limit for a Tweet?",
+      "correct_answer": "140",
+      "incorrect_answers": ["120", "160", "100"]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In the movie Gremlins, after what time of day should you not feed Mogwai?",
+      "correct_answer": "Midnight",
+      "incorrect_answers": ["Evening", "Morning", "Afternoon"]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What was Daft Punk&#039;s first studio album?",
+      "correct_answer": "Homework",
+      "incorrect_answers": [
+        "Discovery",
+        "Random Access Memories",
+        "Human After All"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "In World War ll, Great Britian used inflatable tanks on the ports of Great Britain to divert Hitler away from Normandy/D-day landing.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who created the indie adventure game &quot;Night in the Woods&quot;?",
+      "correct_answer": "Alec Holowka",
+      "incorrect_answers": ["Ron Gilbert", "Tim Schafer", " Tommy Refenes"]
+    }
+  ]
+}
