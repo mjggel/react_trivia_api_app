@@ -39,4 +39,4 @@ License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 
-Note: This project is for educational purposes and is still under development. No commercial use or distribution is intended. Please make sure to respect the terms and conditions of the Open Trivia Database API when using it in your project.
+Note: This project is for educational purposes no commercial use or distribution is intended. Please make sure to respect the terms and conditions of the Open Trivia Database API when using it in your project.
