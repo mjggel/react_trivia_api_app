@@ -2,19 +2,16 @@
 
 ## Overview
 
-This is a front-end trivia game project built with React, React Icons, React Bootstrap, React Router, and Redux. The project is still in development and is intended for educational purposes only. It uses the Open Trivia Database (opentdb.com) API to fetch and display trivia questions.
+This is a front-end trivia game project built with React, and Redux. In this project the user can register a new account to play a trivia game, the user can choose the category and difficulty of the trivia questions at the end of the game their points will saved in the leaderboard ranking.
 
 ## Features
 
 - Allows users to select a category and difficulty level.
+- Shows a leaderboard page to check points and compare ranks
 - Retrieves 10 trivia questions based on the selected category and difficulty.
 - Provides an engaging user interface with React Bootstrap components.
 - Uses Redux to manage application state.
 - Implements routing for navigation between different views.
-
-## Development
-
-This project is currently under development, and the main goal is to create a functional trivia game for learning and practice. I am using React Testing Library (RTL) to write tests for the components.
 
 ## Getting Started
 
